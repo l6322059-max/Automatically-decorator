@@ -1,0 +1,35 @@
+
+name: Build Auto Deco for Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install Android build tools
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ninja-build
+
+      - name: Set up Geode SDK
+        uses: geode-sdk/build-geode-mod@main
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Auto-Deco-Android
+          path: |
+            **/*.geode
+          if-no-files-found: error
+          
