@@ -1,0 +1,64 @@
+{
+  "geode": "4.0.0",
+  "gd": {
+    "win": "2.2081",
+    "android": "2.2081",
+    "mac": "2.2081",
+    "ios": "2.2081"
+  },
+  "id": "yourname.autodeco",
+  "name": "Auto Deco",
+  "version": "1.0.0",
+  "developer": "YourName",
+  "description": "Adds a Deco button to the editor that auto-decorates edges, blocks and hazards.",
+  "settings": {
+    "edge-ids": {
+      "type": "string",
+      "name": "Edge deco IDs",
+      "description": "Comma-separated object IDs placed along exposed block edges (e.g. 1,2,3).",
+      "default": ""
+    },
+    "fill-ids": {
+      "type": "string",
+      "name": "Fill deco IDs",
+      "description": "Comma-separated object IDs scattered on blocks.",
+      "default": ""
+    },
+    "hazard-ids": {
+      "type": "string",
+      "name": "Hazard deco IDs",
+      "description": "Comma-separated object IDs placed beside spikes and other hazards.",
+      "default": ""
+    },
+    "edge-chance": {
+      "type": "float",
+      "name": "Edge density",
+      "default": 0.6,
+      "min": 0.0,
+      "max": 1.0,
+      "control": {
+        "slider": true
+      }
+    },
+    "fill-chance": {
+      "type": "float",
+      "name": "Fill density",
+      "default": 0.15,
+      "min": 0.0,
+      "max": 1.0,
+      "control": {
+        "slider": true
+      }
+    },
+    "hazard-chance": {
+      "type": "float",
+      "name": "Hazard deco density",
+      "default": 0.8,
+      "min": 0.0,
+      "max": 1.0,
+      "control": {
+        "slider": true
+      }
+    }
+  }
+}
